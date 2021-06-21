@@ -3,10 +3,9 @@ version: "2"
 services:
   dnsresolver:
     build: .
-    image:  devops_test:0.1
+    image: devopstest:0.1
     volumes:
       - ./src/dns_script.py:/etc/dns_script.py
-      - ./src/domains.txt:/etc/domains.txt
-    #command: "sleep 500"
+      - ./domains.txt:/etc/domains.txt
     ports:
       - 80:80
