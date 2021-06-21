@@ -7,8 +7,8 @@ def resolve_dns(url):
     print(result_string)
 
 if __name__ == '__main__':
-    domainFile = open("domains.txt", "r") #opens the file in read mode
-    domain_array = domainFile.read().splitlines() #puts the file into an array
+    domainFile = open("domains.txt", "r")
+    domain_array = domainFile.read().splitlines()
     domainFile.close()
 
     n_processes = mp.cpu_count()
