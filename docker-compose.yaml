@@ -2,10 +2,11 @@ version: "2"
 
 services:
   dnsresolver:
-    image: groot:staging
+    build: .
+    image:  devops_test:0.1
     volumes:
-      - ./dns_script.py:/etc/dns_script.py
-      - ./domains.txt:/etc/domains.txt
+      - ./src/dns_script.py:/etc/dns_script.py
+      - ./src/domains.txt:/etc/domains.txt
     #command: "sleep 500"
     ports:
       - 80:80

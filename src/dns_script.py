@@ -2,8 +2,9 @@ import multiprocessing as mp
 import subprocess
 
 def resolve_dns(url):
-    output = subprocess.check_output("geoiplookup %s" % url, shell=True)
-    print("\nResolving domain", url, "\n", output, "\n////////////////////////////////////////")
+    output = subprocess.check_output("geoiplookup %s" % url, shell=True).decode("utf-8")
+    result_string = "\nResolving domain" + str(url) + "\n" + output + "\n////////////////////////////////////////"
+    print(result_string)
 
 if __name__ == '__main__':
     domainFile = open("domains.txt", "r") #opens the file in read mode
